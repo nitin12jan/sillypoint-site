@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sillypoint Ground | Cricket &amp; Sports Ground</title>
+<link rel="icon" type="image/png" href="sillypoint-logo.png">
+<style>
+  :root{
+    --green-dark:#0b3d1e;
+    --green:#166534;
+    --green-light:#22c55e;
+    --cream:#f7f6ef;
+    --white:#ffffff;
+    --text:#1c1c1c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI', Arial, sans-serif; color:var(--text); background:var(--cream); line-height:1.6;}
+  a{text-decoration:none;color:inherit;}
+
+  header{
+    background:linear-gradient(135deg, var(--green-dark), var(--green));
+    color:var(--white);
+    position:sticky; top:0; z-index:100;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  nav{
+    max-width:1100px; margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:700; letter-spacing:.5px;}
+  .logo span{color:var(--green-light);}
+  .logo img{height:44px; width:auto; display:block;}
+  nav ul{display:flex; gap:28px; list-style:none;}
+  nav ul li a{font-weight:500; transition:color .2s;}
+  nav ul li a:hover{color:var(--green-light);}
+
+  .hero{
+    background:linear-gradient(rgba(11,61,30,.75), rgba(11,61,30,.75)),
+      url('https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?w=1200&auto=format&fit=crop') center/cover no-repeat;
+    color:var(--white);
+    text-align:center;
+    padding:120px 24px 100px;
+  }
+  .hero h1{font-size:2.8rem; margin-bottom:16px; font-weight:800;}
+  .hero p{font-size:1.15rem; max-width:600px; margin:0 auto 28px; opacity:.95;}
+  .btn{
+    display:inline-block; background:var(--green-light); color:var(--green-dark);
+    font-weight:700; padding:14px 32px; border-radius:30px;
+    transition:transform .2s, background .2s;
+  }
+  .btn:hover{background:var(--white); transform:translateY(-2px);}
+
+  section{max-width:1100px; margin:0 auto; padding:70px 24px;}
+  .section-title{text-align:center; margin-bottom:12px; font-size:2rem; color:var(--green-dark); font-weight:800;}
+  .section-sub{text-align:center; max-width:620px; margin:0 auto 46px; color:#555;}
+
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
+  .about-grid img{width:100%; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.12);}
+  .about-grid p{margin-bottom:14px; color:#333;}
+
+  .facilities{background:var(--white);}
+  .facility-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:26px;}
+  .facility-card{
+    background:var(--cream); border-radius:14px; padding:32px 24px; text-align:center;
+    border:1px solid #e7e4d8; transition:transform .2s, box-shadow .2s;
+  }
+  .facility-card:hover{transform:translateY(-6px); box-shadow:0 12px 24px rgba(0,0,0,.08);}
+  .facility-icon{font-size:2.4rem; margin-bottom:14px;}
+  .facility-card h3{color:var(--green-dark); margin-bottom:8px; font-size:1.1rem;}
+  .facility-card p{color:#555; font-size:.95rem;}
+
+  .gallery{}
+  .gallery-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
+  .gallery-grid div{
+    height:180px; border-radius:10px;
+    background:linear-gradient(135deg, var(--green), var(--green-dark));
+    display:flex; align-items:center; justify-content:center;
+    color:rgba(255,255,255,.75); font-size:.9rem; font-weight:600;
+  }
+
+  .contact{background:var(--green-dark); color:var(--white);} 
+  .contact .section-title, .contact .section-sub{color:var(--white);} 
+  .contact-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:26px; text-align:center;}
+  .contact-card{background:rgba(255,255,255,.06); border-radius:12px; padding:28px 20px;}
+  .contact-card .icon{font-size:1.8rem; margin-bottom:10px;}
+  .contact-card h4{margin-bottom:6px;}
+  .contact-card p{color:rgba(255,255,255,.8); font-size:.95rem;}
+
+  footer{
+    text-align:center; padding:26px 24px; background:#08281470; color:var(--white);
+    background:var(--green-dark); font-size:.9rem; opacity:.85;
+  }
+
+  @media (max-width:720px){
+    nav ul{display:none;}
+    .about-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);} 
+    .hero h1{font-size:2.1rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="sillypoint-logo.png" alt="Sillypoint Ground logo"></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" style="padding:0; max-width:100%;">
+  <div style="padding:120px 24px 100px;">
+    <h1>Sillypoint Ground</h1>
+    <p>A premier cricket and multi-sport ground built for players who take their game seriously — and their fun even more seriously.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About the Ground</h2>
+  <p class="section-sub">Sillypoint is a dedicated cricket ground designed for practice sessions, matches, tournaments, and community sports events.</p>
+  <div class="about-grid">
+    <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&auto=format&fit=crop" alt="Cricket ground">
+    <div>
+      <p>Named after the fielding position that demands sharp reflexes and courage, Sillypoint Ground brings the same spirit to every player who steps onto the pitch.</p>
+      <p>Whether you're booking a net session, organizing a weekend match, or hosting a full-scale sports event, the ground is maintained to a high standard year-round.</p>
+      <p>Open to individuals, clubs, schools, and corporate teams looking for a reliable, well-kept venue.</p>
+    </div>
+  </div>
+</section>
+
+<section id="facilities" class="facilities">
+  <h2 class="section-title">Facilities</h2>
+  <p class="section-sub">Everything you need for a proper game, from practice to match day.</p>
+  <div class="facility-grid">
+    <div class="facility-card">
+      <div class="facility-icon">🏏</div>
+      <h3>Turf Pitch</h3>
+      <p>Well-maintained cricket pitch suitable for matches and serious practice.</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">🎯</div>
+      <h3>Practice Nets</h3>
+      <p>Dedicated net sessions for batting and bowling practice, available on booking.</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">💡</div>
+      <h3>Floodlights</h3>
+      <p>Evening and night play supported with full floodlight coverage.</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-icon">🏆</div>
+      <h3>Event Hosting</h3>
+      <p>Ground available for tournaments, sports days, and community events.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <h2 class="section-title">Gallery</h2>
+  <p class="section-sub">A glimpse of the ground. (Placeholder tiles — swap in real photos anytime.)</p>
+  <div class="gallery-grid">
+    <div>Pitch View</div>
+    <div>Practice Nets</div>
+    <div>Match Day</div>
+    <div>Floodlights</div>
+    <div>Pavilion</div>
+    <div>Event Setup</div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p class="section-sub">Reach out to book a slot or ask about hosting your event at Sillypoint Ground.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="icon">📍</div>
+      <h4>Address</h4>
+      <p>Near Balak Inter College, Greater Noida West</p>
+    </div>
+    <div class="contact-card">
+      <div class="icon">📞</div>
+      <h4>Phone</h4>
+      <p><a href="tel:+919910819067">9910819067</a></p>
+    </div>
+    <div class="contact-card">
+      <div class="icon">✉️</div>
+      <h4>Email</h4>
+      <p><a href="mailto:sillypoint.sj@gmail.com">sillypoint.sj@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Sillypoint Ground. All rights reserved. &middot; <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a> &middot; <a href="data-deletion.html" style="text-decoration:underline;">Data Deletion</a>
+</footer>
+
+</body>
+</html>
