@@ -79,8 +79,8 @@
     color:rgba(255,255,255,.75); font-size:.9rem; font-weight:600;
   }
 
-  .contact{background:var(--green-dark); color:var(--white);} 
-  .contact .section-title, .contact .section-sub{color:var(--white);} 
+  .contact{background:var(--green-dark); color:var(--white);}
+  .contact .section-title, .contact .section-sub{color:var(--white);}
   .contact-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:26px; text-align:center;}
   .contact-card{background:rgba(255,255,255,.06); border-radius:12px; padding:28px 20px;}
   .contact-card .icon{font-size:1.8rem; margin-bottom:10px;}
@@ -92,10 +92,25 @@
     background:var(--green-dark); font-size:.9rem; opacity:.85;
   }
 
+  .privacy{background:var(--white);}
+  .tab-buttons{display:flex; justify-content:center; gap:14px; margin-bottom:36px;}
+  .tab-btn{
+    background:var(--cream); border:1px solid #e7e4d8; color:var(--green-dark);
+    font-weight:700; padding:12px 28px; border-radius:30px; cursor:pointer; font-size:.95rem;
+    transition:background .2s, color .2s;
+  }
+  .tab-btn.active{background:var(--green); color:var(--white); border-color:var(--green);}
+  .tab-panel{display:none; max-width:760px; margin:0 auto; background:var(--cream); border-radius:14px; padding:36px 40px; border:1px solid #e7e4d8;}
+  .tab-panel.active{display:block;}
+  .tab-panel .effective{color:#666; font-size:.9rem; margin-bottom:18px;}
+  .tab-panel h3{color:var(--green); font-size:1.1rem; margin:22px 0 8px; border-left:4px solid var(--green-light); padding-left:12px;}
+  .tab-panel h3:first-of-type{margin-top:0;}
+  .tab-panel p{color:#333; margin-bottom:6px;}
+
   @media (max-width:720px){
     nav ul{display:none;}
     .about-grid{grid-template-columns:1fr;}
-    .gallery-grid{grid-template-columns:repeat(2,1fr);} 
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
     .hero h1{font-size:2.1rem;}
   }
 </style>
@@ -110,6 +125,7 @@
       <li><a href="#facilities">Facilities</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#privacy">Privacy</a></li>
     </ul>
   </nav>
 </header>
@@ -197,9 +213,54 @@
   </div>
 </section>
 
+<section id="privacy" class="privacy">
+  <h2 class="section-title">Privacy</h2>
+  <p class="section-sub">How we handle your information — Privacy Policy and Data Deletion, side by side.</p>
+
+  <div class="tab-buttons">
+    <button class="tab-btn active" data-tab="privacy-policy" onclick="showPrivacyTab('privacy-policy', this)">Privacy Policy</button>
+    <button class="tab-btn" data-tab="data-deletion" onclick="showPrivacyTab('data-deletion', this)">Data Deletion</button>
+  </div>
+
+  <div id="privacy-policy" class="tab-panel active">
+    <p class="effective">Effective Date: 20 July 2026</p>
+    <p>SillyPoint Cricket Ground Booking values your privacy.</p>
+
+    <h3>Information We Collect</h3>
+    <p>Name, phone number, booking details, WhatsApp messages and related booking information.</p>
+
+    <h3>How We Use Your Information</h3>
+    <p>To manage bookings, communicate with users, notify ground owners and improve our services.</p>
+
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:sillypoint.nj@gmail.com">sillypoint.nj@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919910819067">+91-9910819067</a></p>
+  </div>
+
+  <div id="data-deletion" class="tab-panel">
+    <p class="effective">Effective Date: 20 July 2026</p>
+
+    <h3>Our Data Deletion Practice</h3>
+    <p>We delete your data as soon as the match starts.</p>
+
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:sillypoint.nj@gmail.com">sillypoint.nj@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919910819067">+91-9910819067</a></p>
+  </div>
+</section>
+
 <footer>
   &copy; 2026 Sillypoint Ground. All rights reserved. &middot; <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a> &middot; <a href="data-deletion.html" style="text-decoration:underline;">Data Deletion</a>
 </footer>
+
+<script>
+  function showPrivacyTab(id, btn){
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
